@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tomica Database</title>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <script type="text/javascript" src="search.js"></script>
+  <script type="text/javascript" src="utility.js"></script>
+  <script type="text/javascript" src="data.js"></script>
+  <link rel="stylesheet" href="bootstrap.css">
+  <link rel="stylesheet" href="main.css">
+
+  <!-- iOS Web App Meta -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="TomicaDB">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link href="apple-touch-icon-precomposed.png" rel="apple-touch-icon-precomposed">
+
+  <!-- Android Web App Meta -->
+  <meta name="mobile-web-app-capable" content="yes">
+</head>
+<body>
+  <h3>Tomica Database v0.6</h3>
+  <h5>A tool by <a href="http://chunheisiu.com" target="_blank" id="link">@chunheisiu</a>.</h5>
+  <h6 class="text-muted">Database Last Updated: Jul 16 2016</h6>
+  <br>
+  <div class="well col-sm-6 col-sm-offset-3" id="search-wrapper">
+    <div class="form-inline has-error" id="search-box">
+      <div class="input-group">
+        <input type="text" class="form-control" id="keyword" placeholder="Enter ID or name..." onkeydown="if (event.keyCode == 13) document.getElementById('submit').click()">
+        <span class="input-group-btn">
+          <button type="button" class="btn btn-danger" id="submit" onclick="search()">Search</button>
+        </span>
+      </div>
+    </div>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" id="showCurrent">
+        Show Only Current Models
+      </label>
+    </div>
+  </div>
+  <div class="col-sm-6 col-sm-offset-3" id="result-box">
+    <h4 id="result-title"></h4>
+    <ul class="list-unstyled" id="result">
+    </ul>
+  </div>
+</body>
+</html>
