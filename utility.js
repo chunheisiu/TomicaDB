@@ -4,7 +4,9 @@
  */
 if (typeof Object.create !== 'function') {
     Object.create = function (o) {
-        function F() {}
+        function F() {
+        }
+
         F.prototype = o;
         return new F();
     };
@@ -14,17 +16,14 @@ if (typeof Object.create !== 'function') {
  * Check if var is integer
  */
 function isInt(value) {
-  return !isNaN(value) && (function(x) { return (x | 0) === x; })(parseFloat(value))
+    return !isNaN(value) && (function (x) {
+        return (x | 0) === x;
+    })(parseFloat(value))
 }
 
 /*
  * Check if var is empty
  */
 function isEmpty(value) {
-  if (value != null && value != "") {
-    return true;
-  }
-  else {
-    return false;
-  }
+    return value != null && value !== "";
 }

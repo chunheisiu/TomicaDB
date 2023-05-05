@@ -1,59 +1,70 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Tomica Database</title>
-  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <script type="text/javascript" src="search.js"></script>
-  <script type="text/javascript" src="utility.js"></script>
-  <script type="text/javascript" src="data.js"></script>
-  <link rel="stylesheet" href="bootstrap.css">
-  <link rel="stylesheet" href="main.css">
+    <title>Tomica Database</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script type="text/javascript" src="search.js"></script>
+    <script type="text/javascript" src="utility.js"></script>
+    <script type="text/javascript" src="data.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
 
-  <!-- iOS Web App Meta -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-title" content="TomicaDB">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <link href="apple-touch-icon-precomposed.png" rel="apple-touch-icon-precomposed">
+    <!-- iOS Web App Meta -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="TomicaDB">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="apple-touch-icon-precomposed.png" rel="apple-touch-icon-precomposed">
 
-  <!-- Android Web App Meta -->
-  <meta name="mobile-web-app-capable" content="yes">
+    <!-- Android Web App Meta -->
+    <meta name="mobile-web-app-capable" content="yes">
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-57747256-4"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-57747256-4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-    gtag('config', 'UA-57747256-4');
-  </script>
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'UA-57747256-4');
+    </script>
 </head>
 <body>
-  <h3>Tomica Database v0.6</h3>
-  <h5>A tool by <a href="http://chunheisiu.com" target="_blank" id="link">@chunheisiu</a>.</h5>
-  <h6 class="text-muted">Database Last Updated: Jul 16 2016</h6>
-  <br>
-  <div class="well col-sm-6 col-sm-offset-3" id="search-wrapper">
+<h3>Tomica Database v0.7</h3>
+<h5>A tool by <a href="https://chunheisiu.com" target="_blank" id="link">@chunheisiu</a>.</h5>
+<h6 class="text-muted">Database Last Updated: Jul 16 2016</h6>
+<br>
+<div class="well col-sm-6 col-sm-offset-3" id="search-wrapper">
     <div class="form-inline has-error" id="search-box">
-      <div class="input-group">
-        <input type="text" class="form-control" id="keyword" placeholder="Enter ID or name..." onkeydown="if (event.keyCode == 13) document.getElementById('submit').click()">
-        <span class="input-group-btn">
+        <div class="input-group">
+            <label for="keyword" id="empty-label"></label>
+            <input type="text" class="form-control" id="keyword" placeholder="Enter ID or name..."
+                   onkeydown="if (event.keyCode === 13) document.getElementById('submit').click()">
+            <span class="input-group-btn">
           <button type="button" class="btn btn-danger" id="submit" onclick="search()">Search</button>
         </span>
-      </div>
+        </div>
     </div>
     <div class="checkbox">
-      <label>
-        <input type="checkbox" id="showCurrent">
-        Show Only Current Models
-      </label>
+        <label>
+            <input type="checkbox" id="showCurrent">
+            Show Only Current Models
+        </label>
     </div>
-  </div>
-  <div class="col-sm-6 col-sm-offset-3" id="result-box">
+</div>
+<div class="col-sm-6 col-sm-offset-3" id="result-box">
     <h4 id="result-title"></h4>
     <ul class="list-unstyled" id="result">
     </ul>
-  </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
 </body>
 </html>
